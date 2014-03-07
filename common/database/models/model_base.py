@@ -1,4 +1,4 @@
-from sqlalchemy.ext.declarative import delcarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 ModelBase = declarative_base()
 class DictionaryConvertable():
@@ -8,5 +8,3 @@ class DictionaryConvertable():
 	    d[column.name] = getattr(self, column.name)
 
 	return d
-
-
