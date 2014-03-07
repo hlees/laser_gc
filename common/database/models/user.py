@@ -4,7 +4,7 @@ from .model_base import ModelBase, DictionaryConvertable
 from .json_type import JsonType
 
 
-class User(ModelBase, DictionaryConvertable):
+class User(ModelBase):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True, nullable=False)
@@ -12,4 +12,5 @@ class User(ModelBase, DictionaryConvertable):
     
     social_token = Column(String, nullable=True)
 
-
+    def to_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
