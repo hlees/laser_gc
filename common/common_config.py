@@ -1,3 +1,2 @@
 
-database_url = 'postgresql://slaser:hlees@localhost/slaser'
-
+database_url = 'postgresql://hlees:engus0304@localhost/slaser'
