@@ -13,4 +13,8 @@ class User(ModelBase):
     social_token = Column(String, nullable=True)
 
     def to_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        d = {}
+	for column in self.__table__.columns:
+	    d[column.name] = getattr(self, column.name)
+
+	return d
