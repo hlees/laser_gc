@@ -18,6 +18,7 @@ def withgamecenter():
 	return common.helper.make_response(CODES['SUCCESS'])
 
     except:
+        print("Unexpected error:", sys.exc_info()[0])
         return common.helper.make_response(CODES['FAILURE'])
 
 if __name__ == '__main__':
