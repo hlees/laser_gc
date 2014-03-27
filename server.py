@@ -14,7 +14,6 @@ def withgamecenter():
     try:
 
         app.logger.debug("request data")
-	print request.data
         _req = json.loads(request.data)
 	app.logger.debug("json.loads(request.data)")
 	print _req
