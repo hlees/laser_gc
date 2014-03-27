@@ -7,13 +7,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    print 'what the fuck!'
     return 'Hello World!'
 
 @app.route('/withgamecenter', methods=['POST'])
 def withgamecenter():
     try:
 
-        print "request data"
+        app.logger.debug("request data")
 	print request.data
         _req = json.loads(request.data)
 	print "json.loads(request.data)"
