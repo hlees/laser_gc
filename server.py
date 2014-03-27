@@ -12,7 +12,11 @@ def hello_world():
 @app.route('/withgamecenter', methods=['POST'])
 def withgamecenter():
     try:
+
+        print "request data"
+	print request.data
         _req = json.loads(request.data)
+	print "json.loads(request.data)"
 	print _req
 
 	return common.helper.make_response(CODES['SUCCESS'])
