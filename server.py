@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    print 'what the fuck!'
+    print("what the fuck!")
+    app.logger.debug("hell!!!!!!!!!");
     return 'Hello World!'
 
 @app.route('/withgamecenter', methods=['POST'])
@@ -27,6 +28,6 @@ def withgamecenter():
         return common.helper.make_response(CODES['FAILURE'])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 
 
