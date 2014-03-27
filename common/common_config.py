@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+# -*- coding: utf-8 -*-
 
 database_url = 'postgresql://hlees:engus0304@localhost/slaser'
 
