@@ -1,5 +1,6 @@
 import json, sys
 from flask import Flask
+from flask import request
 
 from common.common_config import CODES
 import common.helper
