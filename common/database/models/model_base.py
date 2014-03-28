@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
 from sqlalchemy.ext.declarative import declarative_base
 from common.flask import app
 

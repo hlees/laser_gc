@@ -1,4 +1,7 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Numeric, DateTime, Boolean
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
+from sqlalchemy import Column, Integer, Text, ForeignKey, Numeric, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from .model_base import ModelBase, DictionaryConvertable
 from .json_type import JsonType
