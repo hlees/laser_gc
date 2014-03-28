@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
 from flask import Flask, Response
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
