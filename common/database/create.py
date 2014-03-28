@@ -1,5 +1,5 @@
-from .session import engine
+from common.flask import app
 from . import models
 
-models.model_base.ModelBase.metadata.create_all(engine)
+models.model_base.ModelBase.metadata.create_all(app.db)
 
