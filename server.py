@@ -14,11 +14,11 @@ def hello_world():
 def withgamecenter():
     try:
 
-        app.logger.debug("request data")
-	app.logger.debug('request.data.length:%d', request.data.length)
-        _req = json.loads(request.data)
-	app.logger.debug("json.loads(request.data)")
-	print _req
+        app.logger.debug('111')
+	app.logger.debug('222')
+        #_req = json.loads(request.data)
+	#app.logger.debug("json.loads(request.data)")
+	#print _req
 
 	return common.helper.make_response(CODES['SUCCESS'])
 
