@@ -16,7 +16,7 @@ def hello_world():
 
 @app.route('/withgamecenter', methods=['POST'])
 def withgamecenter():
-    try:
+    #try:
 
 	req = request.json
 
@@ -43,9 +43,9 @@ def withgamecenter():
 
 	return common.helper.make_response(result)
 
-    except:
-        print "Unexpected error:", sys.exc_info()[0]
-        return common.helper.make_response(CODES['FAILURE'])
+    #except:
+    #    print "Unexpected error:", sys.exc_info()[0]
+    #    return common.helper.make_response(CODES['FAILURE'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
