@@ -17,7 +17,7 @@ def withgamecenter():
         app.logger.debug('111')
 	app.logger.debug('222')
         #_req = json.loads(request.data)
-	#app.logger.debug("json.loads(request.data)")
+	app.logger.debug("json.loads(request.data)")
 	#print _req
 
 	return common.helper.make_response(CODES['SUCCESS'])
