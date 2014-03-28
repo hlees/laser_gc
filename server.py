@@ -1,14 +1,12 @@
 import json, sys
-from flask import Flask
 from flask import request
 
+from common.flask import app
 from common.common_config import CODES
 from common.database.models import User
 from sqlalchemy import or_
 
 import common.helper
-
-app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
