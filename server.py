@@ -3,6 +3,9 @@ from flask import Flask
 from flask import request
 
 from common.common_config import CODES
+from common.database.models import User
+from sqlalchemy import or_
+
 import common.helper
 
 app = Flask(__name__)
@@ -15,15 +18,30 @@ def hello_world():
 def withgamecenter():
     try:
 
-        app.logger.debug('111')
-	print request.data
-	app.logger.debug('222')
-	print request.json
-        #_req = json.loads(request.data)
-	app.logger.debug("json.loads(request.data)")
-	#print _req
+	req = request.json
 
-	return common.helper.make_response(CODES['SUCCESS'])
+        if req['gamecenterId'] != '':
+	    user = User.query.filter_by(or_(device_id=req['deviceId'], social_token=req['gamecenterId'])).first()
+	else:
+	    user = User.query.filter_by(device_id=req['deviceId']).first()
+	if not user:
+
+	    user = User()
+	    user.device_id = req['deviceId']
+	    user.social_token = req['gamecenterId']
+	    user.stage_open = 1
+	    user.stage_clear = 1
+	    user.hint = 5
+
+	    app.db.session.add(user)
+	    app.db.session.commit()
+
+	    result = {
+
+		'user':user.to_dict()
+	    }
+
+	return common.helper.make_response(result)
 
     except:
         print "Unexpected error:", sys.exc_info()[0]

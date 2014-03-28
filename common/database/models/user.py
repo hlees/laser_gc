@@ -11,3 +11,8 @@ class User(ModelBase, DictionaryConvertable):
     device_id = Column(String(100), nullable=False)
     
     social_token = Column(String, nullable=True)
+
+    stage_open = Column(Integer, nullable=False)
+    stage_clear = Column(Integer, nullable=False)
+
+    hint = Column(Integer, nullable=False)
