@@ -5,12 +5,17 @@ from common.flask import app
 from common.common_config import CODES
 from common.database.models import User
 from sqlalchemy import or_
+from common.database.create import create_all
 
 import common.helper
 
 @app.route('/')
 def hello_world():
     return 'Hello World!'
+
+@app.route('/update')
+def update():
+    create_all()
 
 @app.route('/withgamecenter', methods=['POST'])
 def withgamecenter():
