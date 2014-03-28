@@ -16,6 +16,7 @@ def hello_world():
 @app.route('/update')
 def update():
     create_all()
+    return 'create_all function called'
 
 @app.route('/withgamecenter', methods=['POST'])
 def withgamecenter():
