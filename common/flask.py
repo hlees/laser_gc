@@ -10,4 +10,4 @@ from common.common_config import database_url
 
 app = Flask(__name__)
 app.db = create_engine(database_url, pool_size=20, max_overflow=-1)
-app.db.session = scoped_session(sessionmaker(bind=engine))
+app.db.session = scoped_session(sessionmaker(bind=app.db))
