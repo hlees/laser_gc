@@ -8,9 +8,9 @@ class User(ModelBase, DictionaryConvertable):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True, nullable=False)
-    device_id = Column(String(100), nullable=False)
+    device_id = Column(Text, nullable=False)
     
-    social_token = Column(String, nullable=True)
+    social_token = Column(Text, nullable=True)
 
     stage_open = Column(Integer, nullable=False)
     stage_clear = Column(Integer, nullable=False)
