@@ -25,7 +25,7 @@ def withgamecenter():
 	req = request.json
 
         if req['gamecenterId'] != '':
-	    user = User.query.filter_by(or_(device_id=req['deviceId'], social_token=req['gamecenterId'])).first()
+	    user = User.query.filter(or_(User.device_id==req['deviceId'], User.social_token==req['gamecenterId'])).first()
 	else:
 	    user = User.query.filter_by(device_id=req['deviceId']).first()
 	if not user:
