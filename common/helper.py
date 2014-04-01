@@ -6,7 +6,7 @@ from common.common_config import CODES
 
 
 def response_json(res=None):
-    return {'result': res, 'data': None} if type(res) == int else {'result': CODES['SUCCESS'], 'data': json.dumps(res)}
+    return {'result': res, 'data': None} if type(res) == int else {'result': CODES['SUCCESS'], 'data': res}
 
 def make_response(data=None):
     print 'res : ' + json.dumps(response_json(data))
