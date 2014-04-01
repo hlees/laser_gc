@@ -40,10 +40,10 @@ def withgamecenter():
 	    app.db.session.add(user)
 	    app.db.session.commit()
 
-	    result = {
+        result = {
 
-		'user':user.to_dict()
-	    }
+	    'user':user.to_dict()
+        }
 
 	return common.helper.make_response(result)
 
