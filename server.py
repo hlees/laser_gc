@@ -38,7 +38,17 @@ def withgamecenter():
 	    user.hint = 5
 
 	    app.db.session.add(user)
-	    app.db.session.commit()
+
+        if 'gamecenterId' in req:
+	    user.social_token = req['gamecenterId']
+	if 'open' in req:
+	    user.stage_open = req['open']
+	if 'clear' in  req:
+	    user.stage_clear = req['clear']
+	if 'hint' in  req:
+	    user.hint = req['hint']
+
+	app.db.session.commit()
 
         result = {
 
